@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
+using movies.Clients;
 
 namespace movies
 {
@@ -26,6 +27,7 @@ namespace movies
         {
             services.AddControllersWithViews();
             services.AddTransient<IRestClient, RestClient>(_ => new RestClient("https://movieapi20210928214652.azurewebsites.net/"));
+            services.AddScoped<MovieClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

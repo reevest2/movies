@@ -9,12 +9,16 @@ namespace movies.Clients
 {
     public class MovieClient
     {
+        private readonly IRestClient _restClient;
+        public MovieClient(IRestClient restClient) 
+        {
+            _restClient = restClient;
+        }
+
         public async Task<List<Movie>> GetAll()
         {
-            var restClient = new RestClient();
-
-            var request = new RestRequest("https://movieapi20210928214652.azurewebsites.net/");
-            var response = await restClient.ExecuteAsync<List<Movie>>(request);
+            var request = new RestRequest("movie");
+            var response = await _restClient.ExecuteAsync<List<Movie>>(request);
             return response.Data;
         }
     }

@@ -1,0 +1,21 @@
+﻿@model List<movies.Models.Movie>
+    
+@{ 
+    ViewData["Title"] = "Movies Page";
+}
+
+<table class="table">
+    <tbody>
+        @foreach (var movie in Model)
+        {
+
+        <tr>
+            <td>@movie.Name</td>
+            <td>@movie.Score</td>
+            <td>@movie.Review</td>
+            <td>@movie.MustWatch.</td>
+
+        </tr>
+        }
+    </tbody>
+</table>
