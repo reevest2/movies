@@ -8,7 +8,6 @@ using movies.Clients;
 
 namespace movies.Controllers
 {
-    [Route("movies")]
     public class MovieController : Controller
     {
         private readonly MovieClient _movieClient;
