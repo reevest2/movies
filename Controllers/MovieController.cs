@@ -21,5 +21,10 @@ namespace movies.Controllers
             var movies = await _movieClient.GetAll();
             return View(movies);
         }
+        public IActionResult CreateMovie()
+        {
+            return View();
+        }
+
     }
 }
