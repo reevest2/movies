@@ -28,7 +28,7 @@ namespace movies.Controllers
         }
 
         [HttpPost("AddReview")]
-        public async Task<IActionResult> AddReviewPost(Movie request)
+        public async Task<IActionResult> AddReviewPost(MovieCreateRequest request)
         {
             await _movieClient.Create(request);
             return RedirectToAction("Index");

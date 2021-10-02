@@ -22,7 +22,7 @@ namespace movies.Clients
             return response.Data;
         }
 
-        public async Task<Movie> Create(Movie movie)
+        public async Task<Movie> Create(MovieCreateRequest movie)
         {
             var request = new RestRequest("movie", Method.POST);
             request.AddJsonBody(movie);
