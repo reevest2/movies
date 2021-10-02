@@ -21,9 +21,17 @@ namespace movies.Controllers
             var movies = await _movieClient.GetAll();
             return View(movies);
         }
-        public IActionResult CreateMovie()
+        [HttpGet("AddReview")]
+        public IActionResult AddReview()
         {
             return View();
+        }
+
+        [HttpPost("AddReview")]
+        public async Task<IActionResult> AddReviewPost(Movie request)
+        {
+            await _movieClient.Create(request);
+            return RedirectToAction("Index");
         }
 
     }

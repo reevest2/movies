@@ -21,5 +21,13 @@ namespace movies.Clients
             var response = await _restClient.ExecuteAsync<List<Movie>>(request);
             return response.Data;
         }
+
+        public async Task<Movie> Create(Movie movie)
+        {
+            var request = new RestRequest("movie", Method.POST);
+            request.AddJsonBody(movie);
+            var response = await _restClient.ExecuteAsync<Movie>(request);
+            return response.Data;
+        }
     }
 }
