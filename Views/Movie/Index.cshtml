@@ -5,6 +5,14 @@
 }
 
 <table class="table">
+    <thead>
+        <tr>
+            <th>Movie Name</th>
+            <th>Score</th>
+            <th>Review</th>
+            <th>Must Watch?</th>
+        </tr>
+    </thead>
     <tbody>
         @foreach (var movie in Model)
         {
@@ -13,8 +21,7 @@
             <td>@movie.Name</td>
             <td>@movie.Score</td>
             <td>@movie.Review</td>
-            <td>@movie.MustWatch.</td>
-
+            <td>@{if (movie.MustWatch == true)} &#10004;</td>
         </tr>
         }
     </tbody>
