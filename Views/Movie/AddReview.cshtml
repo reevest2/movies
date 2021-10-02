@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <div class="form-group">
                         <label class="form-label" for="MovieName">Movie Name:</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter Move Name" required>
+                        <input type="text" class="form-control" placeholder="Enter Move Name" asp-for="Name" required>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="form-label" for="Score">Score:</label>
-                        <input type="number" min="0" max="10" class="form-control" id="Score" placeholder="0 bad - 10 amazing" required>
+                        <input type="number" min="0" max="10" class="form-control" asp-for="Score" placeholder="0 bad - 10 amazing" required>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -24,7 +24,7 @@
                         <div class="form-group">
                             <label class="form-label" for="MustWatch">
                                 Must Watch?
-                                <input type="checkbox" class="form-control" id="MustWatch" value="MustWatch">
+                                <input type="checkbox" class="form-control" asp-for="MustWatch">
                             </label>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="col-md-8">
                     <div class="form-group">
                         <label class="form-message" for="Review">Review</label>
-                        <textarea type="message" class="form-control" id="Review" placeholder="Enter a Review:" rows="6"></textarea>
+                        <textarea type="message" class="form-control" placeholder="Enter a Review:" asp-for="Review" rows="6"></textarea>
                     </div>
                 </div>
             </div>
