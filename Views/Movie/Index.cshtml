@@ -21,16 +21,10 @@
             <td>@movie.Name</td>
             <td>@movie.Score</td>
             <td>@movie.Review</td>
-            <td>@{if (movie.MustWatch == true)}  &#10004;</td>
-            <td>
-                <!--onclick="location.href"Url.Action("Edit", "Movie", new { id = movie.Id })-->
-                <button type="button" class="btn-outline-primary">
-                    Edit
-                </button>
-            </td>
-            
-            <td>@{if (movie.MustWatch == false)}</td>
-
+            <td>@if (movie.MustWatch) 
+                {
+                    @:&#10004; 
+                }</td>
             <td>
                 <!--onclick="location.href"Url.Action("Edit", "Movie", new { id = movie.Id })-->
                 <button type="button" class="btn-outline-primary">
