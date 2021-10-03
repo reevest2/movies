@@ -18,5 +18,6 @@ namespace movies.Models
         public string Review { get; set; }
 
         public bool MustWatch { get; set; }
+
     }
 }

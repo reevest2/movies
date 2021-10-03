@@ -55,5 +55,11 @@ namespace movies.Controllers
             movie = await _movieClient.Update(movie.Id, request);
             return RedirectToAction("Index");
         }
+        [HttpGet("delete/{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            await _movieClient.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }

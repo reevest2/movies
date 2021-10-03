@@ -44,5 +44,11 @@ namespace movies.Clients
             var response = await _restClient.ExecuteAsync<Movie>(request);
             return response.Data;
         }
+
+        public async Task Delete(string id)
+        {
+            var request = new RestRequest($"movie/{id}", Method.DELETE);
+            await _restClient.ExecuteAsync(request);
+        }
     }
 }
