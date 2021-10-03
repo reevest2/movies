@@ -8,8 +8,11 @@ namespace movies.Models
 {
     public class MovieEditRequest
     {
-        
+
         //MongoDB has this set to unique
+        [DataType(DataType.Text)]
+        [DisplayFormat(ConvertEmptyStringToNull = true)]
+        [Display(Prompt = "Name")]
         public string Name { get; set; }
 
         [Range(0, 10)]

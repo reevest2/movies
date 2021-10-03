@@ -52,7 +52,7 @@ namespace movies.Controllers
                 MustWatch = movie.MustWatch
             };
 
-            movie = await _movieClient.Update(movie.Id, request);
+            await _movieClient.Update(movie.Id, request);
             return RedirectToAction("Index");
         }
     }

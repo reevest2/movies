@@ -27,9 +27,11 @@
                 }</td>
             <td>
                 
-                <button type="button" class="btn-outline-primary" onclick="location.href"Url.Action("Edit", "Movie" new { id = movie.Id })>
-                    Edit
-                </button>
+                <button type="button" class="btn-outline-primary" onclick="location.href='@Url.Action("Edit", 
+                        "Movie",
+                        new { id = movie.Id })'">
+                        Edit
+                        </button>
             </td>
         </tr>
         }
