@@ -34,5 +34,26 @@ namespace movies.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet("edit/{id}")]
+        public async Task<IActionResult> Edit(string id)
+        {
+            var movie = await _movieClient.Get(id);
+            return View(movie);
+        }
+
+        [HttpPost("edit")]
+        public async Task<IActionResult> EditPost(Movie movie)
+        {
+            var request = new MovieEditRequest
+            {
+                Name = movie.Name,
+                Score = movie.Score,
+                Review = movie.Review,
+                MustWatch = movie.MustWatch
+            };
+
+            movie = await _movieClient.Update(movie.Id, request);
+            return RedirectToAction("Index");
+        }
     }
 }

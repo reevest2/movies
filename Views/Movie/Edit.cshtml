@@ -1,0 +1,25 @@
+﻿@model movies.Models.MovieEditRequest
+  
+@{      ViewData["Title"] = "Edit Movie";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("EditPost", "Movie", FormMethod.Post))
+        {
+            <label>Movie Name</label>
+            <input class="form-control" asp-for="Name" /><br />
+
+            <label>Score</label>
+            <input class="form-control" asp-for="Score" /><br />
+
+            <label>Review</label>
+            <input class="form-control" asp-for="Review" /><br />
+
+            <label>Must Watch</label>
+            <input class="form-control" asp-for="MustWatch" /><br />
+
+            <input class="btn btn-success" type="submit" value="Edit" />
+        }
+    </div>
+</div>
