@@ -32,14 +32,14 @@ namespace movies.Clients
 
         public async Task<Movie> Get(string id)
         {
-            var request = new RestRequest($"movies/{id}");
+            var request = new RestRequest($"movie/{id}");
             var response = await _restClient.ExecuteAsync<Movie>(request);
             return response.Data;
         }
         
         public async Task<Movie> Update(string id, object requestBody)
         {
-            var request = new RestRequest($"movies/{id}", Method.PUT);
+            var request = new RestRequest($"movie/{id}", Method.PUT);
             request.AddJsonBody(requestBody);
             var response = await _restClient.ExecuteAsync<Movie>(request);
             return response.Data;
