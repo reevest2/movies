@@ -30,10 +30,10 @@ namespace movies.Clients
             return response.Data;
         }
 
-        public async Task<Movie> Get(string id)
+        public async Task<List<Movie>> Get(string id)
         {
             var request = new RestRequest($"movie/{id}");
-            var response = await _restClient.ExecuteAsync<Movie>(request);
+            var response = await _restClient.ExecuteAsync<List<Movie>>(request);
             return response.Data;
         }
         

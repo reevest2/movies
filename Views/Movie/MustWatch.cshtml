@@ -1,0 +1,45 @@
+﻿@model List<movies.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies Page";
+}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Movie Name</th>
+            <th>Score</th>
+            <th>Review</th>
+            <th>Must Watch?</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+            if (movie.MustWatch == true)
+        {
+            <tr>
+                <td hidden>@movie.Id</td>
+                <td>@movie.Name</td>
+                <td>@movie.Score</td>
+                <td>@movie.Review</td>
+                <td>
+                    @if (movie.MustWatch)
+                    {
+                        @:&#10004;
+                    }
+            </td>
+            <td>
+                <button type="button" class="btn-outline-primary" onclick="location.href='@Url.Action("Edit",
+                        "Movie",
+                        new { id = movie.Id })'">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Movie", new { id = movie.Id})'"> Delete</button>
+            </td>
+
+        </tr>
+    }
+    </tbody>
+</table>

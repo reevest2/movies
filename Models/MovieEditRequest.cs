@@ -8,7 +8,7 @@ namespace movies.Models
 {
     public class MovieEditRequest
     {
-
+        public string Id { get; set; }
         //MongoDB has this set to unique
         public string Name { get; set; }
 

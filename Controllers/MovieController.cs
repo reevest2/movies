@@ -21,6 +21,13 @@ namespace movies.Controllers
             var movies = await _movieClient.GetAll();
             return View(movies);
         }
+
+        public async Task<IActionResult> MustWatch()
+        {
+            var movies = await _movieClient.GetAll();
+            return View(movies);
+        }
+
         [HttpGet("AddReview")]
         public IActionResult AddReview()
         {
@@ -42,7 +49,7 @@ namespace movies.Controllers
         }
 
         [HttpPost("edit")]
-        public async Task<IActionResult> EditPost(Movie movie)
+        public async Task<IActionResult> EditPost(MovieEditRequest movie)
         {
             var request = new MovieEditRequest
             {
@@ -52,7 +59,7 @@ namespace movies.Controllers
                 MustWatch = movie.MustWatch
             };
 
-            movie = await _movieClient.Update(movie.Id, request);
+            await _movieClient.Update(movie.Id, request);
             return RedirectToAction("Index");
         }
         [HttpGet("delete/{id}")]
